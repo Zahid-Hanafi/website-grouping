@@ -1,0 +1,251 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: #000;
+  color: #f0f0f0;
+  line-height: 1.6;
+  overflow-x: hidden;
+  height: 100vh;
+  
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid #000;
+  
+}
+
+td {
+  border: 2px solid #000;
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+
+.h1 {
+	color: #e0e0e0;
+    font-size: 1.5rem;
+    margin: 1px 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 8px rgba(15, 113, 115, 1);
+	text-align: right;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 220px;
+  height: 100%;
+  background-color: rgba(15, 113, 115, 1);
+  color: #fff;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+  z-index: 1;
+  text-align: center;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 10px;
+  transition: color 0.6s ease;
+  transition: background-color 0.8s ease;
+}
+
+.sidebar button:hover {
+  background-color: white;
+  color: black;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin: 10px 0;
+  transition: color 0.6s ease;
+}
+
+.sidebar a:hover {
+  color: black;
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 0;
+  transition: 0.3s;
+  position: relative;
+  height: 100vh;
+}
+
+.main-content.active {
+  margin-left: 250px;
+}
+
+.menu-btn {
+  cursor: pointer;
+  font-size: 24px;
+  background: none;
+  color: white;
+  border: none;
+  padding: 10px;
+}
+
+.menu-btn:hover {
+  color: #0F7173;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  transition: background-color 0.8s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: white;
+}
+
+/* Footer */
+.footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Video Background */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.video-content {
+  position: absolute;
+  top: 70%;
+  left: 20%;
+  text-align: center;
+  z-index: 1;
+  color: white;
+  width: 60%;
+}
+
+.video-content h2 {
+  font-size: 3em;
+  margin: 0;
+}
+
+.video-content p {
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+
+/* Dropdown Button */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+.button {
+    background-color: white;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 50px;
+    padding: 0 15px;
+    margin: 0;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: 50px;
+    width: auto;
+	
+}
+
+.button:hover {
+    background-color: rgba(15, 113, 115, 1);
+    transform: translateY(-2px);
+}
+
+.button:focus {
+    outline: none;
+}
+
+ /* General list style */
+  .product-list {
+    list-style: none; /* Removes default bullet points */
+    padding: 0;       /* Removes default padding */
+    margin: 0;        /* Removes default margin */
+  }
+
+  .product-list li {
+    position: relative;
+    padding-left: 20px; /* Space for the arrow */
+    cursor: pointer;    /* Adds pointer cursor on hover */
+    transition: color 0.3s ease; /* Smooth color transition */
+  }
+
+  /* Arrow styling */
+  .product-list li::before {
+    content: ''; /* Adds a decorative element */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) scale(0); /* Initially hidden */
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid #0F7173; /* Arrow color */
+    border-bottom: 2px solid #0F7173;
+    transform: rotate(45deg); /* Rotates the shape into an arrow */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth animation */
+    opacity: 0; /* Hidden initially */
+  }
+
+  /* Hover effect */
+  .product-list li:hover {
+    color: #0F7173; /* Change text color on hover */
+  }
+
+  .product-list li:hover::before {
+    transform: translateY(-50%) scale(1); /* Arrow grows in size */
+    opacity: 1; /* Arrow becomes visible */
+  }
